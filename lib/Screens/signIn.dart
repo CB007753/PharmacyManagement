@@ -1,4 +1,9 @@
+//import 'dart:html';
+
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
+//import 'package:pharmacy_management/Screens/signUp.dart';
 
 
 class SignIn extends StatefulWidget{
@@ -20,7 +25,7 @@ class _SignIn extends State<SignIn>{
 
   @override
   Widget build(BuildContext context) {
-    //design for text "Login"
+    
     return Container(
       margin: const EdgeInsets.all(4.0),
       padding: const EdgeInsets.only(top:10, bottom: 24),
@@ -33,12 +38,13 @@ class _SignIn extends State<SignIn>{
       ),
       child: Column(
         children: <Widget>[
+//design for text "Login"
           Padding(
             padding: const EdgeInsets.only(left:18.0, top: 10.0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('Login',
-              style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold, color: Colors.green.shade500),
               ),
             ),
           ),
@@ -57,7 +63,7 @@ class _SignIn extends State<SignIn>{
           child: Column(
             children: <Widget>[
               SizedBox(
-                width: 360,
+                width: 360, 
                 child: 
 
             TextFormField(
@@ -112,43 +118,92 @@ class _SignIn extends State<SignIn>{
 //designing the Login Button
 
       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-          
-          
+        mainAxisAlignment: MainAxisAlignment.center,
+        
         children: <Widget>[
- //wrapping elevated button into sized box to set the size of the button
-          SizedBox(
-            height: 60,
-            width: 120,
-            child: Flexible(  
-            child: Padding(
-              padding: const EdgeInsets.only(left:8.0,right: 8.0),
-              child: ElevatedButton(
+ 
+              new Container(
+                child: new Row(
+                  
+                  children: <Widget>[
+//wrapping elevated button into sized box to set the size of the button
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: SizedBox(
+                      height: 60,
+                      width: 120,
+      
+                      child: ElevatedButton(
                 child: Text('Login'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.deepOrange.shade200,
-                  onPrimary: Colors.white,
-                  onSurface: Colors.grey,
+                  onPrimary: Colors.black,
+                  onSurface: Colors.black,
                   alignment: Alignment.center,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)
+                    borderRadius: BorderRadius.circular(20.0)
                   )
                 ),
 
                 onPressed: (){
                   print('User Logged in successfully');
+                         },
+                      ),
+
+                    ),
+                    ),
+                    
+
+//designing the "Signup button"
+                    SizedBox(
+                      height: 60,
+                      width: 120,
+            
+
+                      child: ElevatedButton(
+                child: Text('Sign Up'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepOrange.shade200,
+                  onPrimary: Colors.black,
+                  onSurface: Colors.black,
+                  alignment: Alignment.center,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)
+                  )
+                ),
+
+                onPressed: (){
+                  //path to registration page
+                  
+                  // Navigator.push(context, 
+                  // MaterialPageRoute(builder: (context)=> SignUp())
+                  // );
+                  
+                  print('Registeration page opened');
                 },
               ),
-              
-              )
-            )
+                    )
+                    
+                  ],
+                ),
+                
 
-          )
-          
+              
+
+              ),
 
         ],
-      )
+      ),
 
+     // adding the logo   
+      // Padding(padding: EdgeInsets.only(bottom: 10.0),
+      //         child:Column(
+      //     children: <Widget>[
+      //       new Image.asset('Orange.jpg',width: 100, height: 100),
+      //     ],
+      // ),),
+          
+    
         ],
         ),
     );
