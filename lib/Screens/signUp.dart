@@ -16,7 +16,7 @@ class _SignUp extends State<SignUp> {
       margin: const EdgeInsets.all(4.0),
       padding: const EdgeInsets.only(top: 10, bottom: 24),
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: Colors.white,
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.all(Radius.circular(25.0)),
       ),
@@ -29,7 +29,7 @@ class _SignUp extends State<SignUp> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('Sign Up',
-              style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold, color: Colors.orange),
+              style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold, color: Colors.green.shade500),
               ),
             ),
           ),
@@ -130,7 +130,61 @@ class _SignUp extends State<SignUp> {
           ),
 
 
+//designing signup button
+        Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        
+        children: <Widget>[
+ 
+              new Container(
+                child: new Row(
+                  
+                  children: <Widget>[
+//wrapping elevated button into sized box to set the size of the button
+                  Padding(
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: SizedBox(
+                      height: 60,
+                      width: 120,
+      
+                      child: ElevatedButton(
+                child: Text('Sign Up'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green.shade200,
+                  onPrimary: Colors.black,
+                  onSurface: Colors.black,
+                  alignment: Alignment.center,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)
+                  )
+                ),
 
+                onPressed: (){
+                  print('User Registered successfully');
+                         },
+                      ),
+
+                    ),
+                    ),
+      
+                  ],
+                ),
+
+              ),
+
+        ],
+      ),
+
+
+
+
+// adding the logo   
+      Padding(padding: EdgeInsets.only(bottom: 10.0,top: 13.0),
+              child:Column(
+          children: <Widget>[
+            new Image.asset('assets/medicine logo2.jpg',height: 200.0,width: 200.0),
+          ],
+      ),),
 
         ],
       ),

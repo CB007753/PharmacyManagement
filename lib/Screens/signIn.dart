@@ -1,7 +1,3 @@
-//import 'dart:html';
-
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 //import 'package:pharmacy_management/Screens/signUp.dart';
 
@@ -30,7 +26,7 @@ class _SignIn extends State<SignIn>{
       margin: const EdgeInsets.all(4.0),
       padding: const EdgeInsets.only(top:10, bottom: 24),
       decoration: BoxDecoration(
-          color: Colors.transparent,
+          color: Colors.white,
          border: Border.all(color: Colors.grey),
          borderRadius: BorderRadius.all(
            Radius.circular(25.0)
@@ -136,7 +132,7 @@ class _SignIn extends State<SignIn>{
                       child: ElevatedButton(
                 child: Text('Login'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.deepOrange.shade200,
+                  primary: Colors.green.shade200,
                   onPrimary: Colors.black,
                   onSurface: Colors.black,
                   alignment: Alignment.center,
@@ -163,7 +159,7 @@ class _SignIn extends State<SignIn>{
                       child: ElevatedButton(
                 child: Text('Sign Up'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.deepOrange.shade200,
+                  primary: Colors.green.shade200,
                   onPrimary: Colors.black,
                   onSurface: Colors.black,
                   alignment: Alignment.center,
@@ -196,12 +192,12 @@ class _SignIn extends State<SignIn>{
       ),
 
      // adding the logo   
-      // Padding(padding: EdgeInsets.only(bottom: 10.0),
-      //         child:Column(
-      //     children: <Widget>[
-      //       new Image.asset('Orange.jpg',width: 100, height: 100),
-      //     ],
-      // ),),
+      Padding(padding: EdgeInsets.only(bottom: 10.0,top: 13.0),
+              child:Column(
+          children: <Widget>[
+            new Image.asset('assets/medicine logo2.jpg',height: 200.0,width: 200.0),
+          ],
+      ),),
           
     
         ],
