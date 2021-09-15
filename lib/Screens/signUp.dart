@@ -10,6 +10,9 @@ class _SignUp extends State<SignUp> {
   final _emailTextController = TextEditingController();
   final _passwordTextController = TextEditingController();
 
+  final _genders=['Male','Female', 'Other'];
+  String _gender = 'Male';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,6 +53,7 @@ class _SignUp extends State<SignUp> {
           child: Column(
             children: <Widget>[
 //design for full name textfield
+//adding sized box to specify the width of the text field
       SizedBox(
                 width: 360, 
                 child: 
@@ -73,6 +77,51 @@ class _SignUp extends State<SignUp> {
                   controller: _fullnameTextController,
                   ),
               ),
+
+              Divider(),
+              
+//designing the gender drop down list
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+
+          children: <Widget>[
+
+            new Container(
+                child: new Row(
+                  
+                  children: <Widget>[
+                    
+                    Icon(Icons.male_rounded, color: Colors.grey.shade500, size: 30.0),
+
+                    Padding(padding: EdgeInsets.only(left: 13.0),
+        
+           child:  DropdownButton<String>(
+              items: _genders.map((String value){
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+                
+                );
+            }).toList(),
+
+            value: _gender,
+
+            onChanged:(value){
+               _onDropdownChanged(value!);
+            },  
+              
+              ),
+        ),
+
+                  ]
+                )
+                )
+
+
+          ],
+        ),
+        
+           
 
               Divider(),
     //design for input email field          
@@ -189,5 +238,13 @@ class _SignUp extends State<SignUp> {
         ],
       ),
     );
+    
   }
+  _onDropdownChanged(String value){
+                setState(() {
+                  
+                  this._gender= value;
+                });
+              }
 }
+

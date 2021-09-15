@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pharmacy_management/Screens/signIn.dart';
 import 'package:pharmacy_management/Screens/signUp.dart';
+
+
 void main() {
 runApp(MyApp());
 }
@@ -62,7 +63,9 @@ class HomeScreen extends StatelessWidget {
 Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(title:Text("Pharmacy App"),elevation: 10.3),
-	body: SignUp(),
+	body: 
+  SignUp(),
+  //SignIn(),
 
         
 	);
