@@ -1,6 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pharmacy_management/Screens/signUp.dart';
+
+
+import 'Screens/signIn.dart';
+
 
 
 void main() {
@@ -64,8 +67,8 @@ Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(title:Text("Pharmacy App"),elevation: 10.3),
 	body: 
-  SignUp(),
-  //SignIn(),
+  //SignUp(),
+  SignIn(),
 
         
 	);

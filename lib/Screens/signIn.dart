@@ -1,5 +1,7 @@
+
+
 import 'package:flutter/material.dart';
-//import 'package:pharmacy_management/Screens/signUp.dart';
+import 'package:pharmacy_management/Screens/signUp.dart';
 
 
 class SignIn extends StatefulWidget{
@@ -32,7 +34,10 @@ class _SignIn extends State<SignIn>{
            Radius.circular(25.0)
            ),
       ),
-      child: Column(
+      
+//wrapping the column in a singleChildScrollView widget to solve the render overflow issue
+      child: SingleChildScrollView(
+        child:Column(
         children: <Widget>[
 //design for text "Login"
           Padding(
@@ -171,9 +176,9 @@ class _SignIn extends State<SignIn>{
                 onPressed: (){
                   //path to registration page
                   
-                  // Navigator.push(context, 
-                  // MaterialPageRoute(builder: (context)=> SignUp())
-                  // );
+                  Navigator.push(context,
+                  MaterialPageRoute(builder:(context) {return SignUp();})
+  );
                   
                   print('Registeration page opened');
                 },
@@ -202,6 +207,9 @@ class _SignIn extends State<SignIn>{
     
         ],
         ),
+
+         ),
+       
     );
 
   }

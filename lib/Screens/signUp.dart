@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+//import 'package:pharmacy_management/Screens/signIn.dart';
 
 class SignUp extends StatefulWidget {
+
+
   @override
   State<StatefulWidget> createState() => _SignUp();
 }
@@ -15,7 +18,11 @@ class _SignUp extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+
+//added the whole container widget under scaffold widget to solve the "No Material Widget Found" error.
+    return new Scaffold(
+      	appBar: AppBar(title:Text("Pharmacy App"),elevation: 10.3),
+      body: Container(
       margin: const EdgeInsets.all(4.0),
       padding: const EdgeInsets.only(top: 10, bottom: 24),
       decoration: BoxDecoration(
@@ -24,7 +31,9 @@ class _SignUp extends State<SignUp> {
         borderRadius: BorderRadius.all(Radius.circular(25.0)),
       ),
 
-      child: Column(
+//wrapping the column in a singleChildScrollView widget to solve the render overflow issue
+      child: SingleChildScrollView(
+        child: Column(
         children: <Widget>[
   //design for "Sign Up" Text        
           Padding(
@@ -50,7 +59,10 @@ class _SignUp extends State<SignUp> {
               ),
             ),
 
-          child: Column(
+
+//------
+          child: SingleChildScrollView(
+            child: Column(
             children: <Widget>[
 //design for full name textfield
 //adding sized box to specify the width of the text field
@@ -81,45 +93,45 @@ class _SignUp extends State<SignUp> {
               Divider(),
               
 //designing the gender drop down list
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+Row(
+    mainAxisAlignment: MainAxisAlignment.start,
 
+  children: <Widget>[
+
+    new Container(
+        child: new Row(
+          
           children: <Widget>[
+            
+            Icon(Icons.male_rounded, color: Colors.grey.shade500, size: 30.0),
 
-            new Container(
-                child: new Row(
-                  
-                  children: <Widget>[
-                    
-                    Icon(Icons.male_rounded, color: Colors.grey.shade500, size: 30.0),
+            Padding(padding: EdgeInsets.only(left: 13.0),
 
-                    Padding(padding: EdgeInsets.only(left: 13.0),
+   child:  DropdownButton<String>(
+      items: _genders.map((String value){
+      return DropdownMenuItem<String>(
+        value: value,
+        child: Text(value),
         
-           child:  DropdownButton<String>(
-              items: _genders.map((String value){
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-                
-                );
-            }).toList(),
+        );
+    }).toList(),
 
-            value: _gender,
+    value: _gender,
 
-            onChanged:(value){
-               _onDropdownChanged(value!);
-            },  
-              
-              ),
-        ),
+    onChanged:(value){
+       _onDropdownChanged(value!);
+    },  
+      
+      ),
+),
 
-                  ]
-                )
-                )
+          ]
+        )
+        )
 
 
-          ],
-        ),
+  ],
+),
         
            
 
@@ -154,28 +166,32 @@ class _SignUp extends State<SignUp> {
               SizedBox(
                 width: 360,
                   child: TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
+
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
    //password icon used                     
-                        icon:Icon(Icons.lock),
-                        labelText: 'Password',
-                        hintText: 'Type your password'
-                    ),
-  //validator recieves the text that the user has entered
-                    validator: (value) {
-                      if (value!.trim().isEmpty) {
-                        return 'Password is required';
-                      }else {
-                        return null;
-                      }
-                    },
-                    controller: _passwordTextController,
+                      icon:Icon(Icons.lock),
+                      labelText: 'Password',
+                      hintText: 'Type your password'
                   ),
+  //validator recieves the text that the user has entered
+                  validator: (value) {
+                    if (value!.trim().isEmpty) {
+                      return 'Password is required';
+                    }else {
+                      return null;
+                    }
+                  },
+                  controller: _passwordTextController,
+                  ),
+                  
 
               ),
             ],
           ),
+            ),
+          
           ),
 
 
@@ -237,7 +253,10 @@ class _SignUp extends State<SignUp> {
 
         ],
       ),
+    ),
+    ),
     );
+    
     
   }
   _onDropdownChanged(String value){
