@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-
 import 'Screens/signIn.dart';
+
+
+//import 'Screens/signIn.dart';
 
 
 
@@ -69,6 +71,7 @@ Widget build(BuildContext context) {
 	body: 
   //SignUp(),
   SignIn(),
+  //adminHomePage(),
 
         
 	);

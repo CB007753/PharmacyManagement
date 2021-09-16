@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:pharmacy_management/Screens/AdminPage/admin_homepage.dart';
 import 'package:pharmacy_management/Screens/signUp.dart';
 
 
@@ -147,6 +148,10 @@ class _SignIn extends State<SignIn>{
                 ),
 
                 onPressed: (){
+
+                   Navigator.push(context,
+                  MaterialPageRoute(builder:(context) {return AdminHomePage();})
+                       );
                   print('User Logged in successfully');
                          },
                       ),
@@ -178,7 +183,7 @@ class _SignIn extends State<SignIn>{
                   
                   Navigator.push(context,
                   MaterialPageRoute(builder:(context) {return SignUp();})
-  );
+                    );
                   
                   print('Registeration page opened');
                 },
