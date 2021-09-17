@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_management/Screens/PharmacistPage/pharmacist_homepage.dart';
 
 
-class AdminHomePage extends StatelessWidget{
+class PharmacistHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:Text("Pharmacy App"),elevation: 10.3),
-      
+    
+//single child scroll view: eliminates the render over flow error by allowing to scroll 
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -23,7 +23,7 @@ class AdminHomePage extends StatelessWidget{
                     //menu icon
                     Icon(Icons.menu,color: Colors.black,size: 50.0),
                     //dummy profile pic
-                    Image.asset('assets/profilePic2.png', width: 60.0)
+                    Image.asset('assets/profilePic1.png', width: 55.0)
                   ],
                 ),
               ),
@@ -31,7 +31,7 @@ class AdminHomePage extends StatelessWidget{
 //-----------Designing the heading text
               Padding(padding: const EdgeInsets.only(bottom: 15.0,left: 18.0, right: 18.0),
               child: Text(
-                "Admin Home Page",
+                "Pharmacist Home Page",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 28.0,
@@ -51,6 +51,51 @@ class AdminHomePage extends StatelessWidget{
                   children: <Widget>[
 
 //dummy data for testing purpose of the screen
+//------------Manage Orders
+                    SizedBox(
+                      width: 160.0,
+                      height: 160.0,
+                    child: Card(
+                      color: Colors.green.shade200,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)
+                      ),
+
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+//----------------
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset("assets/manageOrders.png",width: 75.0),
+                              SizedBox(height: 10.0),
+//----------------                       
+                              Text(
+                                "Manage Order",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0
+                                ),
+                                ),
+//----------------
+                                SizedBox(height: 5.0),
+                                Text(
+                                "17 Orders",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                                ),
+
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ),
+                    ),
 
 //------------Manage Drugs
                     SizedBox(
@@ -145,7 +190,7 @@ class AdminHomePage extends StatelessWidget{
                     ),
                     ),
 
-//------------Manage Pharmacist 
+//------------Manage Suppliers 
                     SizedBox(
                       width: 160.0,
                       height: 160.0,
@@ -162,11 +207,11 @@ class AdminHomePage extends StatelessWidget{
 //----------------
                           child: Column(
                             children: <Widget>[
-                              Image.asset("assets/pharmacist1.png",width: 85.0),
+                              Image.asset("assets/manageSuppliers.png",width: 59.0),
                               SizedBox(height: 10.0),
 //----------------                       
                               Text(
-                                "Manage Pharmacist",
+                                "Manage Suppliers",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.black,
@@ -177,7 +222,54 @@ class AdminHomePage extends StatelessWidget{
 //----------------
                                 SizedBox(height: 5.0),
                                 Text(
-                                "3 Pharmacist",
+                                "9 Suppliers",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                                ),
+
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ),
+                    ),
+
+//------------Manage Manufacturers
+                    SizedBox(
+                      width: 160.0,
+                      height: 160.0,
+                    child: Card(
+                      color: Colors.green.shade200,
+                      elevation: 2.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)
+                      ),
+
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+//----------------
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset("assets/manufacturer.png",width: 88.4),
+                              SizedBox(height: 10.0),
+//----------------                       
+                              Text(
+                                "Manage Manufacturers",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0
+                                ),
+                                ),
+//----------------
+                                SizedBox(height: 5.0),
+                                Text(
+                                "13 Manufacturers",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w300,
@@ -193,51 +285,52 @@ class AdminHomePage extends StatelessWidget{
                     ),
 
 //------------View Inventory Status 
-                    SizedBox(
-                      width: 160.0,
-                      height: 160.0,
-                    child: Card(
-                      color: Colors.green.shade200,
-                      elevation: 2.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0)
-                      ),
+                  SizedBox(
+                    width: 160.0,
+                    height: 160.0,
+                  child: Card(
+                    color: Colors.green.shade200,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0)
+                    ),
 
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
 //----------------
-                          child: Column(
-                            children: <Widget>[
-                              Image.asset("assets/inventory1.png",width: 76.0),
-                              SizedBox(height: 10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset("assets/inventory1.png",width: 76.0),
+                            SizedBox(height: 10.0),
 //----------------                       
-                              Text(
-                                "View Inventory Status",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0
-                                ),
-                                ),
+                            Text(
+                              "View Inventory Status",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0
+                              ),
+                              ),
 //----------------
-                                SizedBox(height: 5.0),
-                                Text(
-                                "172 items",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                                ),
+                              SizedBox(height: 5.0),
+                              Text(
+                              "172 items",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w300,
+                              ),
+                              ),
 
-                            ],
-                          ),
+                          ],
                         ),
                       ),
+                    ),
 
-                    ),
-                    ),
+                  ),
+                  ),
+
 
 //------------Settings
                     SizedBox(
@@ -278,15 +371,7 @@ class AdminHomePage extends StatelessWidget{
                     ),
                     ),
 
-//button for testing pharmacist homepage
-      FloatingActionButton(
-        onPressed: (){
-          Navigator.push(context,
-                  MaterialPageRoute(builder:(context) {return PharmacistHomePage();})
-                       );
-                  print('Entering Pharmacist Home Page');
-        }
-        )
+
 
                   ],
                 ),
